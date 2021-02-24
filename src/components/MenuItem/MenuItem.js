@@ -1,13 +1,11 @@
 import { MenuItem, MenuItemContent, Title, SubTitle } from "./styles";
 
-const HomePage = () => {
-  return (
-    <MenuItem>
-      <MenuItemContent>
-        <Title>SHOES</Title>
-        <SubTitle>BUY NOW</SubTitle>
-      </MenuItemContent>
-    </MenuItem>
-  );
-};
-export default HomePage;
+const MenuItemComponent = ({ title, imageUrl }) => (
+  <MenuItem style={{ backgroundImage: `url(${imageUrl})` }}>
+    <MenuItemContent>
+      <Title>{title.toUpperCase()}</Title>
+      <SubTitle>SHOP NOW</SubTitle>
+    </MenuItemContent>
+  </MenuItem>
+);
+export default MenuItemComponent;
