@@ -5,6 +5,7 @@ import "./App.css";
 
 import HomePage from "./pages/Homepage/HomePage";
 import ShopPage from "../src/pages/shop/ShopPage";
+import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
 
 const HatsPage = () => (
   <div>
@@ -15,10 +16,12 @@ const HatsPage = () => (
 function App() {
   return (
     <div className="App">
+      <HeaderComponent></HeaderComponent>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/hats" component={HatsPage} />
         <Route path="/shop" component={ShopPage} />
+        <Route path="/contact" component={ShopPage} />
       </Switch>
       {/* <HomePage></HomePage> */}
     </div>
