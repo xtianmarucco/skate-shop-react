@@ -1,4 +1,9 @@
 .App {
   margin: 0%;
   padding: 0%;
+  font-family: "Open Sans Condensed";
+}
+
+body {
+  padding: 20px 60px;
 }

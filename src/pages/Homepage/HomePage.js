@@ -1,10 +1,10 @@
 import { HomePageStyle } from "./styles";
 import Directory from "../../components/DirectoryMenu/DirectoryMenu";
 
-const HomePage = () => {
+const HomePage = ({ history }) => {
   return (
     <HomePageStyle>
-      <Directory />
+      <Directory history={history} />
     </HomePageStyle>
   );
 };
