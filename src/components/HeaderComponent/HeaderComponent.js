@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 // import Logo from "../../assets/skateboarding.png";
 import { Header, LogoContainer, NavBar, LinkContainer } from "./styles";
 
-const HeaderComponent = () => (
+import { auth } from "../../firebase/firebase.util";
+
+const HeaderComponent = ({ currentUser }) => (
   <Header>
     <LogoContainer>
       <Link to="/">
@@ -19,6 +21,16 @@ const HeaderComponent = () => (
       <LinkContainer>
         <Link to="/shop">SHOP</Link>
       </LinkContainer>
+
+      {currentUser ? (
+        <LinkContainer>
+          <Link onClick={() => auth.signOut()}>SIGN OUT</Link>
+        </LinkContainer>
+      ) : (
+        <LinkContainer>
+          <Link to="/signin">SIGN IN</Link>
+        </LinkContainer>
+      )}
     </NavBar>
   </Header>
 );
